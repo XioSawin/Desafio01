@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C - SAWIN, XIOMARA</title>
+    </head>
+
+    <body>
+        <div style="width:100%;height:0;padding-bottom:56%;position:relative;">
+            <iframe src="https://giphy.com/embed/Yo8eYwf7XeanMWjk44" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <p>
+            <a href="https://giphy.com/gifs/McLarenRacing-f1-mclaren-Yo8eYwf7XeanMWjk44">via GIPHY</a>
+        </p>
+    </body>
+
+    <script>
+        
+        class Book{
+            constructor (name, author){
+                this.name = name;
+                this.author = author;
+            }
+        }
+
+        class Usuario{
+            constructor (nombre, apellido, libro, mascota) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.libros = libro;
+                this.mascotas = mascota;
+            }
+
+            getFullName(){
+                let fullName = `${this.nombre} ${this.apellido}`;
+                return fullName;
+            }
+
+            addMascota(pet){
+                this.mascotas.push(pet);
+            }
+
+            getMascota(){
+                let cantMascotas = 0;
+                this.mascotas.forEach(mascota => cantMascotas++);
+
+                return cantMascotas;
+            }
+
+            addBook(nombre, autor){
+                let libro = new Book(nombre, autor);
+                this.libros.push(libro);
+            }
+
+            getBooks(){
+                let bookNames = [];
+                this.libros.forEach(libro => bookNames.push(libro.name));
+
+                return bookNames;
+            }
+        }
+
+
+        let myBook = new Book("La Segunda Guerra Mundial", "Winston Churchill");
+        let myBookArray = [myBook];
+
+        let mascotaArray = ["Perro"];
+
+        let xiomaraSaw = new Usuario("Xiomara", "Sawin", myBookArray, mascotaArray);
+
+        xiomaraSaw.addMascota("Gato");
+        xiomaraSaw.addBook("Compelling Reason", "C. S. Lewis");
+        xiomaraSaw.addBook("Les Miserables", "Victor Hugo");
+
+        /*let xioFullName = xiomaraSaw.getFullName();
+        let xioMascot = xiomaraSaw.getMascota();
+        let xioBook = xiomaraSaw.getBooks();
+
+        console.log(`El usuario ${xioFullName} tiene ${xioMascot} mascota/s y los siguientes libros: ${xioBook}`);*/
+        
+
+    </script>
+</html>
